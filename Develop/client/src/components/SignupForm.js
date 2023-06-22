@@ -17,6 +17,7 @@ const SignupForm = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -29,7 +30,7 @@ const SignupForm = () => {
 
     try {
       const response = await createUser(userFormData);
-
+      console.log(response)
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
